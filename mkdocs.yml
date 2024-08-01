@@ -59,7 +59,6 @@ nav:
 
 theme:
   name: material
-  favicon: images/favicon_temp.ico
   #custom_dir: mkdocs-material/material/overrides
   features:
     - announce.dismiss
@@ -111,7 +110,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
+  favicon: images/favicon.ico
   icon:
     logo: logo
   logo: 'images/monero.svg'
