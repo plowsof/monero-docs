@@ -15,6 +15,7 @@ COPY --from=builder /monero-docs/public /usr/share/nginx/html
 # Inline Nginx configuration
 RUN echo 'server { \
     listen 80; \
+    add_header Onion-Location https://o64zd74vzijrjchc5ighj2st57mjsvvjty3nhw5pgwj6xolxarlgn3qd.onion/$request_uri;
     root /usr/share/nginx/html; \
     index index.html index.htm; \
     error_page 404 /404.html; \
