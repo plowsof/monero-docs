@@ -117,6 +117,19 @@ theme:
 
 extra_css: ['overrides.css']
 
+extra:
+  social:
+    - icon: material/web
+      link: https://docs.getmonero.org
+    - icon: simple/torbrowser
+      link: http://xmrdoc6phnvjbf5hmjbwdfu47zavzfngymlnwhs2gyxxpxmad4c65kyd.onion
+    - icon: fontawesome/brands/github
+      link: https://github.com/monero-project/monero-docs
+    - icon: simple/matrix
+      link: https://matrix.to/#/#monero-docs:monero.social
+    - icon: simple/liberadotchat
+      link: irc://irc.libera.chat/#monero-docs
+
 repo_name: 'plowsof/monero-docs'
 repo_url: 'https://github.com/plowsof/monero-docs'
 edit_uri: blob/test_test/docs/
