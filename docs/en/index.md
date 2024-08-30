@@ -14,3 +14,7 @@ The goal is to educate and onboard power users faster.
 Please submit your feedback and corrections directly on [github](https://github.com/monerodocs/md/issues).
 
 Find my contact details at [qertoip.com](https://qertoip.com/).
+
+[:simple-github: GitHub](https://github.com/monero-project/monero-docs){ .md-button }
+[:simple-matrix: Matrix](https://matrix.to/#/%23monero-docs:monero.social){ .md-button }
+[:simple-liberadotchat: IRC](https://web.libera.chat/#monero-docs){ .md-button }
