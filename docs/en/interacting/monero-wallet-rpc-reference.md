@@ -3052,8 +3052,8 @@ Alias:  _None_.
 Inputs:
 
 -   _threads_count_  - unsigned int; Number of threads created for mining.
--   _do_background_mining_  - boolean; Allow to start the miner in @smart-mining mode.
--   _ignore_battery_  - boolean; Ignore battery status (for @smart-mining only)
+-   _do_background_mining_  - boolean; Allow to start the miner in [smart mining](https://ww.getmonero.org/resources/moneropedia/smartmining.html) mode.
+-   _ignore_battery_  - boolean; Ignore battery status (for [smart mining](https://www.getmonero.org/resources/moneropedia/smartmining.html) only)
 
 Outputs:  _None_.
 
