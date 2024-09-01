@@ -2415,7 +2415,7 @@ Inputs:
 
 -   _multisig_info_  - array of string; List of multisig string from peers.
 -   _threshold_  - unsigned int; Amount of signatures needed to sign a transfer. Must be less or equal than the amount of signature in `multisig_info`.
--   _password_  - string; Wallet password 
+-   _password_  - string; Wallet password
 
 Outputs:
 
@@ -2668,7 +2668,7 @@ $ curl -X POST http://localhost:18082/json_rpc -d '{"jsonrpc":"2.0","id":"0","me
 
 ### **rescan_blockchain**
 
-Rescan the blockchain from scratch, losing any information which can not be recovered from the blockchain itself.  
+Rescan the blockchain from scratch, losing any information which can not be recovered from the blockchain itself.
 This includes destination addresses, tx secret keys, tx notes, etc.
 
 Alias:  _None_.
