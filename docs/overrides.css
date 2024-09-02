@@ -27,3 +27,15 @@ article .md-typeset__table {
     --md-code-bg-color: #191919;
 }
 
+[role=tooltip]>.md-tooltip2__inner {
+    font-size: 5rem;
+    font-weight: 700;
+    left: clamp(.8rem,var(--md-tooltip-host-x) + var(--md-tooltip-x) - var(--md-tooltip-width)/2,100vw - var(--md-tooltip-width) - .8rem);
+    max-width: min(100vw - 2 * .8rem,400px);
+    padding: .2rem .4rem;
+    -webkit-user-select: none;
+    user-select: none;
+    width: -moz-fit-content;
+    width: fit-content
+}
+
