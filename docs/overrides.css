@@ -29,9 +29,5 @@ article .md-typeset__table {
 
 
 .md-tooltip2 > .md-typeset {
-  background-color: var(--tooltip-background);
-  color: var(--tooltip-color);
-  font-family: var(--default-font);
-  font-size: var(--main-font-size);
-  font-weight: normal;
+  font-size: 15px;
 }
