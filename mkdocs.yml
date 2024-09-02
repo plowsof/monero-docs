@@ -121,7 +121,7 @@ extra:
   social:
     - icon: material/web
       link: https://docs.getmonero.org
-    - icon: something_custom
+    - icon: i2p
       link: http://xmrdoc6phnvjbf5hmjbwdfu47zavzfngymlnwhs2gyxxpxmad4c65kyd.onion
     - icon: fontawesome/brands/github
       link: https://github.com/monero-project/monero-docs
