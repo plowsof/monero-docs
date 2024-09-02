@@ -27,7 +27,14 @@ article .md-typeset__table {
     --md-code-bg-color: #191919;
 }
 
-.md-tooltip__inner,
-.md-tooltip--inline .md-tooltip__inner {
-  font-size: 2rem;
+.md-tooltip2 {
+  top: calc(var(--md-tooltip-host-y) - 2rem);
+}
+
+.md-tooltip2 > .md-typeset {
+  background-color: var(--tooltip-background);
+  color: var(--tooltip-color);
+  font-family: var(--default-font);
+  font-size: var(--main-font-size);
+  font-weight: normal;
 }
