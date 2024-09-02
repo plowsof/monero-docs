@@ -149,7 +149,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
       options:
         custom_icons:
-          - overrides/.icons
+          - overrides
   - pymdownx.details
   - pymdownx.highlight:
       use_pygments: true         # build time highlighting, not client side
