@@ -27,9 +27,6 @@ article .md-typeset__table {
     --md-code-bg-color: #191919;
 }
 
-.md-tooltip2 {
-  top: calc(var(--md-tooltip-host-y) - 2rem);
-}
 
 .md-tooltip2 > .md-typeset {
   background-color: var(--tooltip-background);
