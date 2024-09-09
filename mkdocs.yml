@@ -36,9 +36,6 @@ nav:
   - Blockchain Tools:
     - monero-blockchain-export: 'interacting/monero-blockchain-export-reference.md'
     - monero-blockchain-import: 'interacting/monero-blockchain-import-reference.md'
-  - RPC Library:
-    - Node RPC: 'interacting/dev-guides/monerod-rpc.md'
-    - Wallet RPC: 'interacting/dev-guides/wallet-rpc.md'
   - External:
     - MoneroPulse: 'infrastructure/monero-pulse.md'
 - Mining:
@@ -50,7 +47,10 @@ nav:
     - monerod: 'mining/guides/monerod.md' # TODO
     - xmrig: 'mining/guides/xmrig.md' # TODO
     - p2pool: 'mining/guides/p2pool.md' # TODO
-- Developer:
+- RPC Library:
+  - Node RPC: 'interacting/dev-guides/monerod-rpc.md'
+  - Wallet RPC: 'interacting/dev-guides/wallet-rpc.md'
+- R&D:
   - Cryptography:
     - Introduction: 'cryptography/introduction.md'
     - Asymmetric: # Needs clarity
