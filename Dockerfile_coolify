@@ -5,7 +5,7 @@ WORKDIR /monero-docs
 COPY . /monero-docs
 
 RUN pip install -r requirements.txt
-
+RUN pip install markdown-grid-tables
 RUN mkdocs build
 
 FROM nginx:alpine
