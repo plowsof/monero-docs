@@ -201,18 +201,63 @@ These are network notifications offered by `monerod`. There are also wallet noti
 
 These are advanced options that allow you to optimize performance of your `monerod` node, sometimes at the expense of reliability.
 
-| Option                          | Description
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--prune-blockchain`            | Pruning saves 2/3 of disk space w/o degrading functionality. For maximum effect this should be used already **on the first sync**. If you add this option later the past data will only be pruned logically w/o shrinking the file size and the gain will be delayed. <br /><br />If you already have unpruned blockchain, see the `monero-blockchain-prune` tool. <br /><br />The drawback is that you will contribute less to Monero P2P network in terms of helping new nodes to sync up (up to 1/8 of normal contribution). You will still be useful regarding relaying new transactions and blocks though.
-| `--sync-pruned-blocks`          | Accept pruned blocks instead of pruning yourself. It should save network transfer when used with `--prune-blockchain`. See the [commit](https://github.com/monero-project/monero/commit/8330e772f1ed680a54833d25c4d17d09a99ab8d6) and [comments](https://web.getmonero.org/2019/09/08/logs-for-the-dev-meeting-held-on-2019-09-08.html).
-| `--db-sync-mode`                | Specify sync option, using format:<br />`[safe|fast|fastest]:[sync|async]:[<nblocks_per_sync>[blocks]|<nbytes_per_sync>[bytes]]`<br /><br />The default is `fast:async:250000000bytes`.<br /><br />The `fast:async:*` can corrupt blockchain database in case of a system crash. It should not corrupt if just `monerod` crashes. If you are concerned with system crashes use `safe:sync`.
-| `--max-concurrency`             | Max number of threads to use for parallel jobs. The default value `0` uses the number of CPU threads.
-| `--prep-blocks-threads`         | Max number of threads to use when computing block hashes (PoW) in groups. Defaults to 4. Decrease this if you don't want `monerod` hog your computer when syncing.
-| `--fast-block-sync`             | Sync up most of the way by using embedded, "known" block hashes. Pass `1` to turn on and `0` to turn off. This is on (`1`) by default. Normally, for every block the full node must calculate the block hash to verify miner's proof of work. Because the RandomX PoW used in Monero is very expensive (even for verification), `monerod` offers skipping these calculations for old blocks. In other words, it's a mechanism to trust `monerod` binary regarding old blocks' PoW validity, to sync up faster.
-| `--block-sync-size`             | How many blocks are processed in a single batch during chain synchronization. By default this is 20 blocks for newer history and 100 blocks for older history ("pre v4"). Default behavior is represented by value `0`. Intuitively, the more resources you have, the bigger batch size you may want to try out. Example:<br />`./monerod --block-sync-size=500`
-| `--bootstrap-daemon-address`    | The host:port of a "bootstrap" remote open node that the connected wallets can use while this node is still not fully synced. Example:<br/>`./monerod --bootstrap-daemon-address=opennode.xmr-tw.org:18089`. The node will forward selected RPC calls to the bootstrap node. The wallet will handle this automatically and transparently. Obviously, such bootstraping phase has privacy implications similar to directly using a remote node.
-| `--bootstrap-daemon-login`      | Specify username:password for the bootstrap daemon login (if required). This considers the RPC interface used by the wallet. Normally, open nodes do not require any credentials.
-| `--no-sync`                     | Do not sync up. Continue using bootstrap daemon instead (if set). See [commit](https://github.com/monero-project/monero/pull/5195).
++--------------------------------+------------------------------------------------------------------------------------+
+| Option                         | Description                                                                        |
++================================+====================================================================================+
+| --prune-blockchain             | Pruning saves 2/3 of disk space w/o degrading functionality. For maximum effect    |
+|                                | this should be used already **on the first sync**. If you add this option later    |
+|                                | the past data will only be pruned logically w/o shrinking the file size and the    |
+|                                | gain will be delayed. If you already have unpruned blockchain, see the             |
+|                                | `monero-blockchain-prune` tool. The drawback is that you will contribute less to   |
+|                                | Monero P2P network in terms of helping new nodes to sync up (up to 1/8 of normal   |
+|                                | contribution). You will still be useful regarding relaying new transactions and    |
+|                                | blocks though.                                                                     |
++--------------------------------+------------------------------------------------------------------------------------+
+| --sync-pruned-blocks           | Accept pruned blocks instead of pruning yourself. It should save network transfer  |
+|                                | when used with `--prune-blockchain`. See the [commit] and [comments].              |
++--------------------------------+------------------------------------------------------------------------------------+
+| --db-sync-mode                 | Specify sync option, using format:                                                 |
+|                                | `[safe|fast|fastest]:[sync|async]:[<nblocks_per_sync>[blocks]|<nbytes_per_sync>[by |
+|                                | tes]]`                                                                             |
+|                                | The default is `fast:async:250000000bytes`.                                        |
+|                                | The `fast:async:*` can corrupt blockchain database in case of a system crash. It   |
+|                                | should not corrupt if just `monerod` crashes. If you are concerned with system     |
+|                                | crashes use `safe:sync`.                                                           |
++--------------------------------+------------------------------------------------------------------------------------+
+| --max-concurrency              | Max number of threads to use for parallel jobs. The default value `0` uses the     |
+|                                | number of CPU threads.                                                             |
++--------------------------------+------------------------------------------------------------------------------------+
+| --prep-blocks-threads          | Max number of threads to use when computing block hashes (PoW) in groups. Defaults |
+|                                | to 4. Decrease this if you don't want `monerod` hog your computer when syncing.    |
++--------------------------------+------------------------------------------------------------------------------------+
+| --fast-block-sync              | Sync up most of the way by using embedded, "known" block hashes. Pass `1` to turn  |
+|                                | on and `0` to turn off. This is on (`1`) by default. Normally, for every block the |
+|                                | full node must calculate the block hash to verify miner's proof of work. Because   |
+|                                | the RandomX PoW used in Monero is very expensive (even for verification),          |
+|                                | `monerod` offers skipping these calculations for old blocks. In other words, it's  |
+|                                | a mechanism to trust `monerod` binary regarding old blocks' PoW validity, to sync  |
+|                                | up faster.                                                                         |
++--------------------------------+------------------------------------------------------------------------------------+
+| --block-sync-size              | How many blocks are processed in a single batch during chain synchronization. By   |
+|                                | default this is 20 blocks for newer history and 100 blocks for older history ("pre |
+|                                | v4"). Default behavior is represented by value `0`. Intuitively, the more          |
+|                                | resources you have, the bigger batch size you may want to try out. Example:        |
+|                                | `./monerod --block-sync-size=500`                                                  |
++--------------------------------+------------------------------------------------------------------------------------+
+| --bootstrap-daemon-address     | The host:port of a "bootstrap" remote open node that the connected wallets can use |
+|                                | while this node is still not fully synced. Example:                                |
+|                                | `./monerod --bootstrap-daemon-address=opennode.xmr-tw.org:18089`. The node will    |
+|                                | forward selected RPC calls to the bootstrap node. The wallet will handle this      |
+|                                | automatically and transparently. Obviously, such bootstraping phase has privacy    |
+|                                | implications similar to directly using a remote node.                              |
++--------------------------------+------------------------------------------------------------------------------------+
+| --bootstrap-daemon-login       | Specify username:password for the bootstrap daemon login (if required). This       |
+|                                | considers the RPC interface used by the wallet. Normally, open nodes do not        |
+|                                | require any credentials.                                                           |
++--------------------------------+------------------------------------------------------------------------------------+
+| --no-sync                      | Do not sync up. Continue using bootstrap daemon instead (if set).                  |
+|                                | See [commit](https://github.com/monero-project/monero/pull/5195).                  |
++--------------------------------+------------------------------------------------------------------------------------+
 
 #### Mining
 
