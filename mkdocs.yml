@@ -156,7 +156,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.superfences         # nest code blocks inside codeblocks
   - pymdownx.snippets            # insert content from other files
-  - tables
+  - markdown_grid_tables
 
 plugins:
   - search
