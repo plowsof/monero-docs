@@ -6,7 +6,7 @@ title: Tor Onion Seed Nodes for Monero P2P Network
 
 ## When this is necessary?
 
-This is only necessary if you run a full node and you want to propagate locally-originating transactions over Tor (using `tx-proxy` option, see [monerod reference](/interacting/monerod-reference/#tori2p)). This allows you to mask your IP (as transaction originator) against P2P network surveillence, on top of Monero's built-in Dandelion++.
+This is only necessary if you run a full node and you want to propagate locally-originating transactions over Tor (using `tx-proxy` option, see [monerod reference](../interacting/monerod-reference.md#tori2p-and-proxies)). This allows you to mask your IP (as transaction originator) against P2P network surveillence, on top of Monero's built-in Dandelion++.
 
 ## What are P2P seed nodes?
 
