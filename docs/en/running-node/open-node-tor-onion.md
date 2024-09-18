@@ -81,7 +81,7 @@ Create monero **log** directory `mkdir -p /var/log/monero` and `chown -R monero:
 
 Feel free to adjust above to your preferred conventions, just remember to adjust the paths accordingly.
 
-[Download](/interacting/download-monero-binaries/) and [verify](/interacting/verify-monero-binaries/) the file.
+[Download](../interacting/download-monero-binaries.md) and [verify](../interacting/verify-monero-binaries.md) the file.
 
 Extract `tar -xf monero-linux-x64-v0.17.1.9.tar.bz2` (adjust filename).
 
@@ -99,7 +99,7 @@ Verify it is working as intended `tail -n100 /var/log/monero/monero.log`
 
 ### /etc/monero.conf
 
-This is just an example configuration and it is by no means authoritative. Feel free to modify, see [monerod reference](/interacting/monerod-reference).
+This is just an example configuration and it is by no means authoritative. Feel free to modify, see [monerod reference](../interacting/monerod-reference.md).
 
 Modify paths if you changed them.
 
